@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<kml xmlns="http://www.opengis.net/kml/2.2">
+  <Folder>
+    <name>Ground Overlays</name>
+    <description>Flood insurance rate</description>
+    <GroundOverlay>
+      <name>Flood insurance rate 1</name>
+      <description>Flood insurance rate 1</description>
+      <Icon>
+        <href>https://raw.githubusercontent.com/RCODI/2015blueironhack-weiqing/master/app/data/flood/649.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>40.5074040815363</north>
+        <south>40.4298316293427</south>
+        <east>-86.8292427062988</east>
+        <west>-86.9308662414551</west>
+      </LatLonBox>
+      <color>55ffffff</color>
+    </GroundOverlay>
+
+    <GroundOverlay>
+      <name>Flood insurance rate 2</name>
+      <description>Flood insurance rate 2</description>
+      <Icon>
+        <href>https://raw.githubusercontent.com/RCODI/2015blueironhack-weiqing/master/app/data/flood/648-2.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>40.4289169417354</north>
+        <south>40.3502072745374</south>
+        <east>-86.9306945800781</east>
+        <west>-87.0331764221191</west>
+      </LatLonBox>
+      <color>55ffffff</color>
+    </GroundOverlay>
+
+    <GroundOverlay>
+      <name>Flood insurance rate 3</name>
+      <description>Flood insurance rate 3</description>
+      <Icon>
+        <href>https://raw.githubusercontent.com/RCODI/2015blueironhack-weiqing/master/app/data/flood/649-2.png</href>
+      </Icon>
+      <LatLonBox>
+        <north>40.4298969636959</north>
+        <south>40.3496185668805</south>
+        <east>-86.8288993835449</east>
+        <west>-86.931209564209</west>
+      </LatLonBox>
+      <color>55ffffff</color>
+    </GroundOverlay>
+  </Folder>
+</kml>

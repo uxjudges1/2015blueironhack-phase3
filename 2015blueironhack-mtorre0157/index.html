@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <meta charset="UTF-8"/>
+    
+    <title>Livin' Lafayette</title>
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous"/>
+    <link rel="stylesheet" type="text/css" href="css/style.css"/>
+</head>
+<body>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-default navbar-inverse navbar-static-top">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="#">Livin' Lafayette</a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li class="active"><a href="#">Home</a></li>
+                    <li><a href="#">About</a></li>
+                    <li><a href="#">Contact</a></li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="row">
+            <!-- Side Panel -->
+            <div class="col-sm-4 main-panel">
+                <div class="panel panel-default panel-main">
+                    <ul class="nav nav-tabs">
+                        <li class="active"><a data-toggle="tab" href="#options">Options</a></li>
+                        <li><a data-toggle="tab" href="#info">Information</a></li>
+                    </ul>
+                    <div class="panel-body">
+                        <div class="tab-content">
+                            <div id="options" class="tab-pane fade in active">
+                                <div class="panel panel-default panel-main">
+                                    <div class="panel-heading">Metrics</div>
+                                    <div class="panel-body">
+                                        <div class="well well-sm">
+                                            Use the sliders below to set the weight of each metric and choose what matters to you:
+                                        </div>
+                                        <h5>Cost:</h5>
+                                        <input id="cost" type="range" min="0" max="100" step="1">
+                                        <h5>Safety:</h5>
+                                        <input id="safety" type="range" min="0" max="100" step="1">
+                                        <h5>User Ratings:</h5>
+                                        <input id="user-rating" type="range" min="0" max="100" step="1">
+                                        <h5>Distance:</h5>
+                                        <input id="location-main" type="text" placeholder="Enter A Location">
+                                        <input id="distance-main" type="range" min="0" max="100" step="1">
+                                    </div>
+                                </div>
+                                <div class="panel panel-default panel-main">
+                                    <div class="panel-heading">Filters</div>
+                                    <div class="panel-body">
+                                        <h5>Bedrooms: </h5>
+                                        <input type="checkbox" name="bedrooms" value="1" checked="true"> 1
+                                        <input type="checkbox" name="bedrooms" value="2"> 2
+                                        <input type="checkbox" name="bedrooms" value="3"> 3
+                                        <input type="checkbox" name="bedrooms" value="3"> 4+
+                                        <input type="checkbox" name="bedrooms" value="studio"> Studio
+                                        <h5>Bathrooms:</h5>
+                                        <input type="checkbox" name="bathrooms" value="1" checked="true"> 1
+                                        <input type="checkbox" name="bathrooms" value="1.5"> 1.5
+                                        <input type="checkbox" name="bathrooms" value="2"> 2
+                                        <input type="checkbox" name="bathrooms" value="2+"> 2+
+                                    </div>
+                                </div>
+                                <button type="button" class="btn btn-default" style="float: right;">Submit</button>
+                            </div>
+                            <div id="info" class="tab-pane fade">
+                                <div class="panel panel-default panel-main">
+                                    <div class="panel-heading">Apartment Info</div>
+                                    <div class="panel-body">
+                                        <h4>Fowler Apartments</h4>
+                                        <h5>Address:</h5>
+                                        <div class="well well-sm">
+                                            407 Ferry Street<br/>
+                                            Lafayette, IN<br/>
+                                            47901
+                                        </div>
+                                        <h5>Price: $400</h5>
+                                        <h5>Distance: 4.5 mi</h5>
+                                        <h5>Crime Rate: .14</h5>
+                                        <h5>Bedroom: 2</h5>
+                                        <h5>Bathroom: 1</h5>
+                                        <a href="#">Link</a>
+                                    </div>
+                                </div>
+                                <div class="panel panel-default panel-main">
+                                    <div class="panel-heading">Score</div>
+                                    <div class="panel-body" id="chart-container">
+                                        <svg id="chart"></svg>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Google Map -->
+            <div class="col-sm-8 main-panel">
+                <div id="map"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- jQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <!-- Google Maps -->
+    <script async defer
+    src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBB24ELBke4ttVaw3eWpsfu6yeCKXLNIc8&callback=initMap"></script>
+    <script src="js/maps.js"></script>
+    <!-- Bootstrap -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js" integrity="sha512-K1qjQ+NcF2TYO/eI3M6v8EiNYZfA95pQumfvcVrTHtwQVDG+aHRqLi/ETn2uB+1JqwYqVG3LIvdm9lj6imS/pQ==" crossorigin="anonymous"></script>
+    <!-- D3.js -->
+    <script src="http://d3js.org/d3.v3.min.js"></script>
+    <script src="http://labratrevenge.com/d3-tip/javascripts/d3.tip.v0.6.3.js"></script>
+    <script src="js/chart.js" ></script>
+</body>
+</html>
